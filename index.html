@@ -49,7 +49,7 @@
         <img id="fondo-page" src="img/fondo-portal.png" alt="">
         <h1 class="fw-light ms-3 me-3 text-center">!Envios tan rapidos como si de abrir un portal directo en tu hogar!
         </h1>
-        <button id="btn-registro" class="rounded-pill">
+        <button id="btn-registro" class="rounded-pill" data-bs-toggle="modal" data-bs-target="#Registro">
             ¡registrate!
         </button>
         <button id="btn-iniciar-sesion" class="rounded-pill" data-bs-toggle="modal" data-bs-target="#LoginUser">
@@ -82,14 +82,14 @@
                     <div></div>
                 </div>
                 <div id="modalBody" class="modal-body">
-                    <div class="rounded-pill cajainfo" style="background-color: rgba(68, 186, 230, 1);">
+                    <div class="rounded-pill cajainfo-R" style="background-color: rgba(68, 186, 230, 1);">
                         <div style="width: 95%">
-                            <input class="text-center b-0  rounded-pill cajainfo-Texto" type="text" placeholder="Ingrese su correo">
+                            <input class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su correo">
                         </div>
                     </div>
-                    <div class="rounded-pill cajainfo" style="background-color: rgba(68, 186, 230, 1);">
+                    <div class="rounded-pill cajainfo-R" style="background-color: rgba(68, 186, 230, 1);">
                         <div style="width: 95%;">
-                            <input class="rounded-pill b-0 text-center cajainfo-Texto" type="password" placeholder="Ingrese su contraseña">
+                            <input class="rounded-pill b-0 text-center cajainfo-R-Texto" type="password" placeholder="Ingrese su contraseña">
                         </div>
                     </div>
                     <button id="btn-iniciar-sesion" class="rounded-pill mt-5">
@@ -98,6 +98,42 @@
                 </div>
 
                 <div id="moodalFl" class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--REGISTRO DE SESION-->
+    <div class="modal fade" id="Registro" tabindex="-1" aria-labelledby="RegistroLabel" aria-hidden="true">
+        <div class="modal-dialog m-0">
+            <div class="modal-content">
+                <div id="moodalHR" class="modal-header">
+                    <button id="btn-close-R" type="button" class="border-0 fa-solid fa-arrow-left-long" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="RegistroLabel">Registro de clientes</h5>
+                    <div></div>
+                </div>
+                <div id="modalBody" class="modal-body">
+                    <div class="rounded-pill cajainfo-R">
+                        <div style="width: 95%">
+                            <input class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su nombre">
+                        </div>
+                    </div>
+                    <div class="rounded-pill cajainfo-R">
+                        <div style="width: 95%">
+                            <input class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su Correo">
+                        </div>
+                    </div>
+                    <div class="rounded-pill cajainfo-R">
+                        <div style="width: 95%;">
+                            <input class="rounded-pill b-0 text-center cajainfo-R-Texto" type="password" placeholder="Ingrese su contraseña">
+                        </div>
+                    </div>
+                    <button id="btn-registro" class="rounded-pill mt-5">
+                        Crear cuenta
+                    </button>
+                </div>
+
+                <div id="moodalFR" class="modal-footer">
                 </div>
             </div>
         </div>

@@ -265,3 +265,80 @@ header {
     width: 100%;
     height: 58px;
 }
+
+/*REGISTROS_USER*/
+.modal-dialog {
+    max-width: 100%;
+    max-height: 100vh !important;
+ }
+ 
+ .modal-content {
+     height: 100vh;
+ }
+ 
+ #moodalHR {
+     background-color: rgba(68, 186, 230, 1);
+     height: 20%;
+     border-bottom-left-radius: 40%;
+     border-bottom-right-radius: 40%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     align-items: baseline;
+     align-content: stretch;
+ }
+ 
+ #btn-close-R {
+     background-color: rgba(68, 186, 230, 1);
+     color: white;
+     font-size: 220%;
+     margin-top: 8%;;
+ }
+ 
+ #RegistroLabel {
+     margin-bottom: 0;
+     margin-left: 4%;
+     margin-top: 6%;
+     line-height: 1.5;
+     color: white;
+     font-size: 30px;
+ 
+ 
+ }
+ 
+ #moodalFR {
+     background-color: rgba(68, 186, 230, 1);
+     height: 15%;
+     border-top-left-radius: 45%;
+     border-top-right-radius: 45%;
+ }
+ 
+ #modalBody {
+     display: flex;
+     flex-direction: column;
+     flex-wrap: nowrap;
+     justify-content: flex-start;
+     align-items: center;
+     align-content: stretch;
+ }
+ 
+ .cajainfo-R {
+     width: 286px;
+     background-color: rgba(229, 118, 27, 1);
+     color: white;
+     height: 70px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: center;
+     align-items: center;
+     align-content: stretch;
+     margin-top: 7%;
+ 
+ }
+ 
+ .cajainfo-R-Texto {
+     width: 100%;
+     height: 58px;
+ }
