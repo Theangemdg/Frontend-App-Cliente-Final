@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!--LANDING PAGE-->
     <!--nav-Bar-->
     <header id="bg-navbarcolor" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -26,11 +27,12 @@
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
         <div class="cont-menu">
-            
+
             <nav>
                 <div class="container contenedor-1">
                     <div style="margin-top: 40px;">
-                        <img id="profile-photo" src="img/default-profile.jpg" class="rounded-circle position-img" alt="">
+                        <img id="profile-photo" src="img/default-profile.jpg" class="rounded-circle position-img"
+                            alt="">
                         <a id="inicarss" href="#">Iniciar Sesion</a>
                     </div>
                 </div>
@@ -45,22 +47,23 @@
 
     <div id="contenido-page">
         <img id="fondo-page" src="img/fondo-portal.png" alt="">
-        <h1 class="fw-light ms-3 me-3 text-center">!Envios tan rapidos como si de abrir un portal directo en tu hogar!</h1>
+        <h1 class="fw-light ms-3 me-3 text-center">!Envios tan rapidos como si de abrir un portal directo en tu hogar!
+        </h1>
         <button id="btn-registro" class="rounded-pill">
             ¡registrate!
         </button>
-        <button id="btn-iniciar-sesion" class="rounded-pill">
+        <button id="btn-iniciar-sesion" class="rounded-pill" data-bs-toggle="modal" data-bs-target="#LoginUser">
             Iniciar Sesion
         </button>
         <h1 class="fw-bold ms-3 me-3 text-center">¿Como funciona Portal?</h1>
-        <h2 class="fw-lighter ms-3 me-3 text-center">Portal es una app para pedidos ya sea de comidas o productos para la salud, asi tambien para tus compras en
+        <h2 class="fw-lighter ms-3 me-3 text-center">Portal es una app para pedidos ya sea de comidas o productos para
+            la salud, asi tambien para tus compras en
             supermercados.</h2>
         <img src="img/undraw_online_groceries_a02y.png" class="img-page-1 mb-5" alt="">
         <h1 class="fw-light ms-3 me-3 mb-5 text-center">!Ordena lo que deseas¡</h1>
         <img src="img/undraw_On_the_way_re_swjt.png" class="img-page-2 mb-5" alt="">
         <h1 class="fw-light ms-3 me-3 mb-5 text-center">!Tu pedido hasta la puerta de tu casa¡</h1>
     </div>
-
     <footer id="pie-landing" style="background-color: rgba(229, 118, 27, 1);">
         <div id="content-footer">
             <i class="fa-brands fa-facebook size-icon"></i>
@@ -68,9 +71,38 @@
         </div>
     </footer>
 
+    <!--LOGIN-->
+    <!-- Modal -->
+    <div class="modal fade" id="LoginUser" tabindex="-1" aria-labelledby="LoginUserLabel" aria-hidden="true">
+        <div class="modal-dialog m-0">
+            <div class="modal-content">
+                <div id="moodalHL" class="modal-header">
+                    <button id="btn-close" type="button" class="border-0 fa-solid fa-arrow-left-long" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="LoginUserLabel">Inicio de sesion</h5>
+                    
+                </div>
+                <div id="modalBody" class="modal-body">
+                    <div class="container rounded-pill mt-5 cajainfo" style="background-color: rgba(68, 186, 230, 1);">
+                        <input class="m-1 rounded-pill b-0 text-center" type="text" placeholder="Ingrese su correo">
+                    </div>
+                    <div class="rounded-pill mt-3 mb-5 cajainfo" style="background-color: rgba(68, 186, 230, 1);">
+                        <div>
+                            <input class="rounded-pill m-1 b-0 text-center" type="password" placeholder="Ingrese su contraseña">
+                        </div>
+                    </div>
+                    <button id="btn-iniciar-sesion" class="rounded-pill mt-5">
+                        Iniciar Sesion
+                    </button>
+                </div>
+
+                <div id="moodalFl" class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 </body>
-
