@@ -129,6 +129,14 @@ body {
     font-family: 'Source Code Pro', monospace;
 }
 
+#btn-iniciar-sesion:hover {
+    background-color: #31A0C9;
+}
+
+#btn-registro:hover {
+    background-color: rgba(208, 110, 20, 1);
+}
+
 header {
     position: fixed !important;
     width: 100%;
