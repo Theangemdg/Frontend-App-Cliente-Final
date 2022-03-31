@@ -115,20 +115,20 @@
                 <div id="modalBody" class="modal-body">
                     <div class="rounded-pill cajainfo-R">
                         <div style="width: 95%">
-                            <input class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su nombre">
+                            <input id="txt-nombre" class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su nombre">
                         </div>
                     </div>
                     <div class="rounded-pill cajainfo-R">
                         <div style="width: 95%">
-                            <input class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su Correo">
+                            <input id="txt-correo" class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text" placeholder="Ingrese su Correo">
                         </div>
                     </div>
                     <div class="rounded-pill cajainfo-R">
                         <div style="width: 95%;">
-                            <input class="rounded-pill b-0 text-center cajainfo-R-Texto" type="password" placeholder="Ingrese su contraseña">
+                            <input id="txt-contraseña" class="rounded-pill b-0 text-center cajainfo-R-Texto" type="password" placeholder="Ingrese su contraseña">
                         </div>
                     </div>
-                    <button id="btn-registro" class="rounded-pill mt-5">
+                    <button id="btn-registro" class="rounded-pill mt-5" onclick="agregarUsuario()">
                         Crear cuenta
                     </button>
                 </div>
@@ -143,4 +143,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="js/controlador.js"></script>
 </body>
