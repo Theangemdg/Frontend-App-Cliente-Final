@@ -78,3 +78,35 @@ var usuarios = [
         }]
     }
 ];
+
+
+function InicializarDatos() {
+    if(JSON.parse(localStorage.getItem('usuarios'))==null){
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    }
+    
+}
+InicializarDatos();
+
+var usuariosPortal = JSON.parse(localStorage.getItem('usuarios'));
+
+
+function agregarUsuario() {
+    let txtNombre = document.getElementById('txt-nombre').value;
+    let txtCorreo = document.getElementById('txt-correo').value;
+    let txtContraseña = document.getElementById('txt-contraseña').value;
+    
+    let usuario = 
+    {
+        nombre: txtNombre,
+        correo: txtCorreo,
+        contraseña: txtContraseña,
+        ordenes: [],
+        metodoPago: []
+    }
+
+    console.log(usuario)
+    usuariosPortal.push(usuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuariosPortal));
+
+}
