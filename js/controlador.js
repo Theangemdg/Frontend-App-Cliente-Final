@@ -81,10 +81,7 @@ var usuarios = [
 
 
 function InicializarDatos() {
-    if (JSON.parse(localStorage.getItem('usuarios')) == null) {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    }
-
 }
 InicializarDatos();
 
@@ -111,7 +108,7 @@ function agregarUsuario() {
 }
 
 function validarUsuario(correo, contraseña) {
-    var bAcces = false;
+    let bAcces = false;
 
     for (let i = 0; i < usuariosPortal.length; i++) {
         if (usuariosPortal[i].correo==correo && usuariosPortal[i].contraseña==contraseña ) {
@@ -126,33 +123,16 @@ function validarUsuario(correo, contraseña) {
 function ingresar() {
     var ucorreo = '';
     var contraseña = '';
-    var bAcces = false;
+    let bAcceso = false;
 
-    ucorreo = document.getElementById('txt-correo').value;
-    contraseña = document.getElementById('txt-contraseña').value;
+    ucorreo = document.getElementById('txt-correoI').value;
+    contraseña = document.getElementById('txt-contraS').value;
 
-    bAcces = validarUsuario(ucorreo, contraseña);
-    console.log(bAcces);
+    bAcceso = validarUsuario(ucorreo, contraseña);
+    console.log(bAcceso);
 
-    if(bAcces == true){
-        document.getElementById('contenido-page').classList.toggle('d-none');
-        document.getElementById('menu-lateral').classList.toggle('d-none');
-        document.getElementById('cont-menu').style.backgroundColor = 'rgba(68, 186, 230, 1)';
-
-        document.getElementById('menu-lateral').innerHTML =
-        `
-        <div class="container contenedor-1">
-            <div style="margin-top: 40px;">
-                <img id="profile-photo" src="img/default-profile.jpg" class="rounded-circle position-img"alt="">
-                <a id="inicarss" href="#">Iniciar Sesion</a>
-            </div>
-        </div>
-        <div class="container contenedor-2">
-            <button type="button">Carrito</button>
-            <button type="button">Cerrar Sesion</button>
-            <button type="button">Estado de las ordenes</button>
-        </div>
-        `
+    if(bAcceso == true){
+        window.location = "../Htmls/menu-cliente.html"
     }else{
         alert("Credenciales erroneas");
     }
