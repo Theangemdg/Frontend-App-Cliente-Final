@@ -81,10 +81,10 @@ var usuarios = [
 
 
 function InicializarDatos() {
-    if(JSON.parse(localStorage.getItem('usuarios'))==null){
+    if (JSON.parse(localStorage.getItem('usuarios')) == null) {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
-    
+
 }
 InicializarDatos();
 
@@ -95,8 +95,8 @@ function agregarUsuario() {
     let txtNombre = document.getElementById('txt-nombre').value;
     let txtCorreo = document.getElementById('txt-correo').value;
     let txtContraseña = document.getElementById('txt-contraseña').value;
-    
-    let usuario = 
+
+    let usuario =
     {
         nombre: txtNombre,
         correo: txtCorreo,
@@ -110,13 +110,11 @@ function agregarUsuario() {
     localStorage.setItem('usuarios', JSON.stringify(usuariosPortal));
 }
 
-function validarUsuario(correo,contraseña){
-    let txtCorreo = document.getElementById('txt-correo').value;
-    let txtContraseña = document.getElementById('txt-contraseña').value;
-    var bAcces = false; 
+function validarUsuario(correo, contraseña) {
+    var bAcces = false;
 
-    for(let i=0; i<usuariosPortal.length; i++){
-        if(txtCorreo == usuariosPortal[i].correo && txtContraseña == usuariosPortal[i].contraseña){
+    for (let i = 0; i < usuariosPortal.length; i++) {
+        if (usuariosPortal[i].correo==correo && usuariosPortal[i].contraseña==contraseña ) {
             bAcces = true;
             sessionStorage.setItem('Usuario activo', usuariosPortal[i].nombre);
         }
@@ -125,34 +123,37 @@ function validarUsuario(correo,contraseña){
     return bAcces;
 }
 
-function ingresar(){
+function ingresar() {
     var ucorreo = '';
     var contraseña = '';
     var bAcces = false;
 
     ucorreo = document.getElementById('txt-correo').value;
     contraseña = document.getElementById('txt-contraseña').value;
-    
-    bAcces = validarUsuario(ucorreo,contraseña);
-}
 
-function iniciarUsuario(){
-    document.getElementById('contenido-page').classList.toggle('d-none');
-    document.getElementById('menu-lateral').classList.toggle('d-none');
-    document.getElementById('cont-menu').style.backgroundColor = 'rgba(68, 186, 230, 1)';
+    bAcces = validarUsuario(ucorreo, contraseña);
+    console.log(bAcces);
 
-    document.getElementById('menu-lateral').innerHTML = 
-    `
-    <div class="container contenedor-1">
-        <div style="margin-top: 40px;">
-            <img id="profile-photo" src="img/default-profile.jpg" class="rounded-circle position-img"alt="">
-            <a id="inicarss" href="#">Iniciar Sesion</a>
+    if(bAcces == true){
+        document.getElementById('contenido-page').classList.toggle('d-none');
+        document.getElementById('menu-lateral').classList.toggle('d-none');
+        document.getElementById('cont-menu').style.backgroundColor = 'rgba(68, 186, 230, 1)';
+
+        document.getElementById('menu-lateral').innerHTML =
+        `
+        <div class="container contenedor-1">
+            <div style="margin-top: 40px;">
+                <img id="profile-photo" src="img/default-profile.jpg" class="rounded-circle position-img"alt="">
+                <a id="inicarss" href="#">Iniciar Sesion</a>
+            </div>
         </div>
-    </div>
-    <div class="container contenedor-2">
-        <button type="button">Carrito</button>
-        <button type="button">Cerrar Sesion</button>
-        <button type="button">Estado de las ordenes</button>
-    </div>
-    `
+        <div class="container contenedor-2">
+            <button type="button">Carrito</button>
+            <button type="button">Cerrar Sesion</button>
+            <button type="button">Estado de las ordenes</button>
+        </div>
+        `
+    }else{
+        alert("Credenciales erroneas");
+    }
 }
