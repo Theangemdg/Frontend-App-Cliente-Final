@@ -81,10 +81,7 @@ var usuarios = [
 
 
 function InicializarDatos() {
-    if(JSON.parse(localStorage.getItem('usuarios'))==null){
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    }
-    
 }
 InicializarDatos();
 
@@ -95,8 +92,8 @@ function agregarUsuario() {
     let txtNombre = document.getElementById('txt-nombre').value;
     let txtCorreo = document.getElementById('txt-correo').value;
     let txtContraseña = document.getElementById('txt-contraseña').value;
-    
-    let usuario = 
+
+    let usuario =
     {
         nombre: txtNombre,
         correo: txtCorreo,
@@ -108,5 +105,35 @@ function agregarUsuario() {
     console.log(usuario)
     usuariosPortal.push(usuario);
     localStorage.setItem('usuarios', JSON.stringify(usuariosPortal));
+}
 
+function validarUsuario(correo, contraseña) {
+    let bAcces = false;
+
+    for (let i = 0; i < usuariosPortal.length; i++) {
+        if (usuariosPortal[i].correo==correo && usuariosPortal[i].contraseña==contraseña ) {
+            bAcces = true;
+            sessionStorage.setItem('Usuario activo', usuariosPortal[i].nombre);
+        }
+    }
+
+    return bAcces;
+}
+
+function ingresar() {
+    var ucorreo = '';
+    var contraseña = '';
+    let bAcceso = false;
+
+    ucorreo = document.getElementById('txt-correoI').value;
+    contraseña = document.getElementById('txt-contraS').value;
+
+    bAcceso = validarUsuario(ucorreo, contraseña);
+    console.log(bAcceso);
+
+    if(bAcceso == true){
+        window.location = "../Htmls/menu-cliente.html"
+    }else{
+        alert("Credenciales erroneas");
+    }
 }
