@@ -79,6 +79,43 @@ var usuarios = [
     }
 ];
 
+const formulario = document.getElementById('modalBodyR');
+const inputs = document.querySelectorAll('#modalBodyR input');
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+const validarFormulario = (e)=>{
+    switch(e.target.name) {
+        case 'nombre':
+            if(expresiones.nombre.test(e.target.value)){
+                document.getElementById('txt-nombre').classList.remove('cajainfo-R-Texto-incorrecto');
+                document.getElementById('txt-nombre').classList.add('cajainfo-R-Texto-correcto');
+                document.querySelector('.input-error').classList.remove('input-error-activo')
+            }else{
+                document.getElementById('txt-nombre').classList.remove('cajainfo-R-Texto-correcto');
+                document.getElementById('txt-nombre').classList.add('cajainfo-R-Texto-incorrecto');
+                document.querySelector('.input-error').classList.add('input-error-activo')
+            }
+        break;
+        case 'correo':
+
+        break;
+        case 'contraseña':
+
+        break;
+    }
+}
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+})
 
 function InicializarDatos() {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
@@ -93,18 +130,38 @@ function agregarUsuario() {
     let txtCorreo = document.getElementById('txt-correo').value;
     let txtContraseña = document.getElementById('txt-contraseña').value;
 
-    let usuario =
-    {
-        nombre: txtNombre,
-        correo: txtCorreo,
-        contraseña: txtContraseña,
-        ordenes: [],
-        metodoPago: []
+    var campos = {
+        nombre: false,
+        correo: false,
+        contraseña: false
     }
 
-    console.log(usuario)
-    usuariosPortal.push(usuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuariosPortal));
+    if(txtNombre && txtCorreo && txtContraseña !== " "){
+        campos.nombre = true;
+        campos.correo = true;
+        campos.contraseña = true;
+        console.log(campos)
+    }
+
+
+    if (campos.nombre && campos.correo && campos.contraseña === true){
+        let usuario =
+        {
+            nombre: txtNombre,
+            correo: txtCorreo,
+            contraseña: txtContraseña,
+            ordenes: [],
+            metodoPago: []
+        }
+    
+        console.log(usuario)
+        usuariosPortal.push(usuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuariosPortal));
+        window.location = "../Htmls/menu-cliente.html"
+    }else{
+        alert("Es necesario rellenar todos los campos")
+
+    }
 }
 
 function validarUsuario(correo, contraseña) {
