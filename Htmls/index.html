@@ -115,28 +115,38 @@
                     <div></div>
                 </div>
                 <div id="modalBodyR" class="modal-body modal-Body-Estilo">
-                    <div class="rounded-pill cajainfo-R">
-                        <div style="width: 95%">
-                            <input id="txt-nombre" name="nombre" class="text-center b-0  rounded-pill cajainfo-R-Texto"
-                                type="text" placeholder="Ingrese su nombre">
+                    <div id="grupo-nombre" style="display: contents;">
+                        <div class="rounded-pill cajainfo-R">
+                            <div style="width: 95%">
+                                <input id="txt-nombre" name="nombre"
+                                    class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text"
+                                    placeholder="Ingrese su nombre">
+                            </div>
                         </div>
+                        <p class="input-error text-center">El nombre no puede contener numeros, solo letras y espacios
+                        </p>
                     </div>
-                    <p class="input-error text-center">El nombre no puede contener numeros, solo letras y espacios</p>
-                    <div class="rounded-pill cajainfo-R">
-                        <div style="width: 95%">
-                            <input id="txt-correo" name="correo" class="text-center b-0  rounded-pill cajainfo-R-Texto"
-                                type="text" placeholder="Ingrese su Correo">
+                    <div id="grupo-correo" style="display: contents;">
+                        <div class="rounded-pill cajainfo-R">
+                            <div style="width: 95%">
+                                <input id="txt-correo" name="correo"
+                                    class="text-center b-0  rounded-pill cajainfo-R-Texto" type="text"
+                                    placeholder="Ingrese su Correo">
+                            </div>
                         </div>
+                        <p class="input-error">El correo solo puede contener numeros, letras, guiones, puntos y espacio</p>
                     </div>
-                    <p class="input-error">El correo solo puede contener numeros, letras, guiones, puntos y espacio</p>
-                    <div class="rounded-pill cajainfo-R">
-                        <div style="width: 95%;">
-                            <input id="txt-contraseña" name="contraseña"
-                                class="rounded-pill b-0 text-center cajainfo-R-Texto" type="password"
-                                placeholder="Ingrese su contraseña">
+                    <div id="grupo-contraseña" style="display: contents;">
+                        <div class="rounded-pill cajainfo-R">
+                            <div style="width: 95%;">
+                                <input id="txt-contraseña" name="contraseña"
+                                    class="rounded-pill b-0 text-center cajainfo-R-Texto" type="password"
+                                    placeholder="Ingrese su contraseña">
+                            </div>
                         </div>
+                        <p class="input-error">la contraseña tiene que ser de 4 a 12 digitos</p>
                     </div>
-                    <p class="input-error">la contraseña tiene que ser de 4 a 12 digitos</p>
+
                     <button id="btn-registro" type="submit" class="rounded-pill mt-5" onclick="agregarUsuario()">
                         Crear cuenta
                     </button>

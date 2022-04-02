@@ -93,22 +93,26 @@ const expresiones = {
 const validarFormulario = (e)=>{
     switch(e.target.name) {
         case 'nombre':
-            if(expresiones.nombre.test(e.target.value)){
-                document.getElementById('txt-nombre').classList.remove('cajainfo-R-Texto-incorrecto');
-                document.getElementById('txt-nombre').classList.add('cajainfo-R-Texto-correcto');
-                document.querySelector('.input-error').classList.remove('input-error-activo')
-            }else{
-                document.getElementById('txt-nombre').classList.remove('cajainfo-R-Texto-correcto');
-                document.getElementById('txt-nombre').classList.add('cajainfo-R-Texto-incorrecto');
-                document.querySelector('.input-error').classList.add('input-error-activo')
-            }
+            validarCampo(expresiones.nombre, e.target, 'nombre');
         break;
         case 'correo':
-
+            validarCampo(expresiones.correo, e.target, 'correo');
         break;
         case 'contraseña':
-
+            validarCampo(expresiones.password, e.target, 'contraseña');
         break;
+    }
+}
+
+const validarCampo = (expresion, input, campo)=> {
+    if(expresion.test(input.value)){
+        document.getElementById(`txt-${campo}`).classList.remove('cajainfo-R-Texto-incorrecto');
+        document.getElementById(`txt-${campo}`).classList.add('cajainfo-R-Texto-correcto');
+        document.querySelector(`#grupo-${campo} .input-error`).classList.remove('input-error-activo')
+    }else{
+        document.getElementById(`txt-${campo}`).classList.remove('cajainfo-R-Texto-correcto');
+        document.getElementById(`txt-${campo}`).classList.add('cajainfo-R-Texto-incorrecto');
+        document.querySelector(`#grupo-${campo} .input-error`).classList.add('input-error-activo')
     }
 }
 
