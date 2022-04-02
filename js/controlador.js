@@ -161,7 +161,7 @@ function agregarUsuario() {
         console.log(usuario)
         usuariosPortal.push(usuario);
         localStorage.setItem('usuarios', JSON.stringify(usuariosPortal));
-        window.location = "../Htmls/menu-cliente.html"
+        ingresar();
     }else{
         alert("Es necesario rellenar todos los campos")
 
@@ -188,6 +188,11 @@ function ingresar() {
 
     ucorreo = document.getElementById('txt-correoI').value;
     contraseña = document.getElementById('txt-contraS').value;
+
+    if(ucorreo == "" && contraseña == ""){
+        ucorreo = ucorreo = document.getElementById('txt-correo').value;
+        contraseña = document.getElementById('txt-contraseña').value;
+    }
 
     bAcceso = validarUsuario(ucorreo, contraseña);
     console.log(bAcceso);

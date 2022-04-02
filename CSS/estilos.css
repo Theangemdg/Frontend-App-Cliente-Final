@@ -60,6 +60,8 @@ body {
     position: relative;
     transition: all 500ms ease;
     transform: translateX(-100%);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 #btn-menu:checked~.container-menu .cont-menu {
@@ -188,7 +190,8 @@ header {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: baseline;
-    align-content: stretch
+    align-content: stretch;
+
 }
 
 .size-icon {
