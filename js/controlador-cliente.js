@@ -2,29 +2,29 @@ var categorias = [
     {
         id: 1,
         nombreCategoria: "Pizzas",
-        icono: "img/iconoPizza.jpg",
+        icono: "../img/iconoPizza.jpg",
         empresas: [
             {
                 nombreEmpresa: "Pizza Hut",
-                imagen: "img/pizza-hut-banner.jpg",
-                logo: "img/pizzaHutLogo.jpg",
+                imagen: "../img/pizza-hut-banner.jpg",
+                logo: "../img/pizzaHutLogo.jpg",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 99.99
                     },
                     {
                         nombreProducto: "Pizza de jamon",
-                        imgProducto: "img/pizzajamon.jpg",
+                        imgProducto: "../img/pizzajamon.jpg",
                         descripcion: "Pizzas",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "Pizza 4 estaciones",
-                        imgProducto: "img/Pizza4estaciones.jpg",
+                        imgProducto: "../img/Pizza4estaciones.jpg",
                         descripcion: "Pizzas",
                         precio: 199.99
                     },
@@ -32,25 +32,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Little Caesars",
-                imagen: "img/leattleCaesarBanner.jpg",
-                logo: "img/littleCaessarsLogo.jpg",
+                imagen: "../img/leattleCaesarBanner.jpg",
+                logo: "../img/littleCaessarsLogo.jpg",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 100.99
                     },
                     {
                         nombreProducto: "Pizza de Jamon",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "4 estaciones",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 200.99
                     },
@@ -58,25 +58,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Dominos Pizza",
-                imagen: "img/BannerDominos.jpg",
-                logo: "img/DominosLogo.jpg",
+                imagen: "../img/BannerDominos.jpg",
+                logo: "../img/DominosLogo.jpg",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 100.99
                     },
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/PizzaPeperoni.jpg",
                         descripcion: "Pizzas",
                         precio: 200.99
                     },
@@ -87,29 +87,29 @@ var categorias = [
     {
         id: 2,
         nombreCategoria: "Hamburguesas",
-        icono: "img/hamburguesaIcono.jpg",
+        icono: "../img/hamburguesaIcono.jpg",
         empresas: [
             {
                 nombreEmpresa: "Mc Donalds",
-                imagen: "img/BannerMcdonald.jpg",
-                logo: "img/McdonaldLogo.jpg",
+                imagen: "../img/BannerMcdonald.jpg",
+                logo: "../img/McdonaldLogo.jpg",
                 descripcion: "Hamburguesas-bedidas-helados",
                 productos: [
                     {
                         nombreProducto: "Big Mac",
-                        imgProducto: "img/BigMac.jpg",
+                        imgProducto: "../img/BigMac.jpg",
                         descripcion: "Hamburguesas",
                         precio: 99.99
                     },
                     {
                         nombreProducto: "Cheese Burguer",
-                        imgProducto: "img/CheeseBurguerMcdonald.jpg",
+                        imgProducto: "../img/CheeseBurguerMcdonald.jpg",
                         descripcion: "Hamburguesas",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "Doble cuarto de carne",
-                        imgProducto: "img/DobleCuartoMcdonald.jpg",
+                        imgProducto: "../img/DobleCuartoMcdonald.jpg",
                         descripcion: "Hamburguesas",
                         precio: 250.99
                     },
@@ -117,25 +117,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Burguer King",
-                imagen: "img/BannerBurguerKing.png",
-                logo: "img/BurguerKingLogo.png",
+                imagen: "../img/BannerBurguerKing.png",
+                logo: "../img/BurguerKingLogo.png",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
                     {
                         nombreProducto: "Whooper",
-                        imgProducto: "img/WHOOPERBK.png",
+                        imgProducto: "../img/WHOOPERBK.png",
                         descripcion: "Hamburguesas",
                         precio: 250.99
                     },
                     {
                         nombreProducto: "Big King XL Sencilla",
-                        imgProducto: "img/BIG KING XL SENCILLA_BK.png",
+                        imgProducto: "../img/BIG KING XL SENCILLA_BK.png",
                         descripcion: "Hamburguesas",
                         precio: 400.99
                     },
                     {
                         nombreProducto: "Mega Stacker Triple",
-                        imgProducto: "img/MEGA-STACKER-TRIPLEBK.png",
+                        imgProducto: "../img/MEGA-STACKER-TRIPLEBK.png",
                         descripcion: "Hamburguesas",
                         precio: 350.99
                     },
@@ -146,29 +146,29 @@ var categorias = [
     {
         id: 3,
         nombreCategoria: "Farmacias",
-        icono: "img/FarmaciasIcono.jpg",
+        icono: "../img/FarmaciasIcono.jpg",
         empresas: [
             {
                 nombreEmpresa: "Farmacias Kielsa",
-                imagen: "img/KielsaBanner.jpg",
-                logo: "img/kielsaLogo.jpg",
+                imagen: "../img/KielsaBanner.jpg",
+                logo: "../img/kielsaLogo.jpg",
                 descripcion: "Medicamentos-Higiene-Suplementos",
                 productos: [
                     {
                         nombreProducto: "Amoxicilina",
-                        imgProducto: "img/AmoxicilinaKielsa.jpg",
+                        imgProducto: "../img/AmoxicilinaKielsa.jpg",
                         descripcion: "Medicamentos",
                         precio: 75.99
                     },
                     {
                         nombreProducto: "Alcohol Etilico",
-                        imgProducto: "img/AlcoholEtiKielsa.jpg",
+                        imgProducto: "../img/AlcoholEtiKielsa.jpg",
                         descripcion: "Higiene",
                         precio: 80.99
                     },
                     {
                         nombreProducto: "Marcarilla",
-                        imgProducto: "img/Mascarilla.jpg",
+                        imgProducto: "../img/Mascarilla.jpg",
                         descripcion: "Higiene",
                         precio: 10.99
                     },
@@ -176,25 +176,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Farmacia Siman",
-                imagen: "img/FarmaciaSimanBanner.png",
-                logo: "img/SimanLogo.jpg",
+                imagen: "../img/FarmaciaSimanBanner.png",
+                logo: "../img/SimanLogo.jpg",
                 descripcion: "Medicamentos-Higiene-Suplementos",
                 productos: [
                     {
                         nombreProducto: "Amoxicilina",
-                        imgProducto: "img/AmoxicilinaKielsa.jpg",
+                        imgProducto: "../img/AmoxicilinaKielsa.jpg",
                         descripcion: "Medicamentos",
                         precio: 75.99
                     },
                     {
                         nombreProducto: "Alcohol Etilico",
-                        imgProducto: "img/AlcoholEtiKielsa.jpg",
+                        imgProducto: "../img/AlcoholEtiKielsa.jpg",
                         descripcion: "Higiene",
                         precio: 80.99
                     },
                     {
                         nombreProducto: "Marcarilla",
-                        imgProducto: "img/Mascarilla.jpg",
+                        imgProducto: "../img/Mascarilla.jpg",
                         descripcion: "Higiene",
                         precio: 10.99
                     },
@@ -202,25 +202,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Punto Farma",
-                imagen: "img/PuntoFarmaBanner.png",
-                logo: "img/PuntoFarmaLogo.png",
+                imagen: "../img/PuntoFarmaBanner.png",
+                logo: "../img/PuntoFarmaLogo.png",
                 descripcion: "Medicamentos-Higiene-Suplementos",
                 productos: [
                     {
                         nombreProducto: "Amoxicilina",
-                        imgProducto: "img/AmoxicilinaKielsa.jpg",
+                        imgProducto: "../img/AmoxicilinaKielsa.jpg",
                         descripcion: "Medicamentos",
                         precio: 75.99
                     },
                     {
                         nombreProducto: "Alcohol Etilico",
-                        imgProducto: "img/AlcoholEtiKielsa.jpg",
+                        imgProducto: "../img/AlcoholEtiKielsa.jpg",
                         descripcion: "Higiene",
                         precio: 80.99
                     },
                     {
                         nombreProducto: "Marcarilla",
-                        imgProducto: "img/Mascarilla.jpg",
+                        imgProducto: "../img/Mascarilla.jpg",
                         descripcion: "Higiene",
                         precio: 10.99
                     },
@@ -231,29 +231,29 @@ var categorias = [
     {
         id: 4,
         nombreCategoria: "Bebidas",
-        icono: "img/BebidasIcono.jpg",
+        icono: "../img/BebidasIcono.jpg",
         empresas: [
             {
                 nombreEmpresa: "Coca Cola",
-                imagen: "img/CocaColaBanner.png",
-                logo: "img/CocaColaLogo.png",
+                imagen: "../img/CocaColaBanner.png",
+                logo: "../img/CocaColaLogo.png",
                 descripcion: "Bebidas Carbonatadas",
                 productos: [
                     {
                         nombreProducto: "Coca Cola portatil",
-                        imgProducto: "img/CocaPortatil.jpg",
+                        imgProducto: "../img/CocaPortatil.jpg",
                         descripcion: "Bebida",
                         precio: 20.99
                     },
                     {
                         nombreProducto: "Coca Cola de lata",
-                        imgProducto: "img/cocaLata.webp",
+                        imgProducto: "../img/cocaLata.webp",
                         descripcion: "Bebida",
                         precio: 15.99
                     },
                     {
                         nombreProducto: "Coca Cola 3 litros",
-                        imgProducto: "img/Coca3L.png",
+                        imgProducto: "../img/Coca3L.png",
                         descripcion: "Bebida",
                         precio: 50.99
                     },
@@ -261,25 +261,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Pepsi Cola",
-                imagen: "img/PepsiBanner.jpg",
-                logo: "img/PepsiLogo.png",
+                imagen: "../img/PepsiBanner.jpg",
+                logo: "../img/PepsiLogo.png",
                 descripcion: "Bebidas Carbonatadas",
                 productos: [
                     {
                         nombreProducto: "Pepsi portatil",
-                        imgProducto: "img/PepsiPortatil.png",
+                        imgProducto: "../img/PepsiPortatil.png",
                         descripcion: "Bebida",
                         precio: 15.99
                     },
                     {
                         nombreProducto: "Pepsi de lata",
-                        imgProducto: "img/PepsiLata.png",
+                        imgProducto: "../img/PepsiLata.png",
                         descripcion: "Bebida",
                         precio: 20.99
                     },
                     {
                         nombreProducto: "Pepsi 3 litros",
-                        imgProducto: "img/Pepsi3L.jpg",
+                        imgProducto: "../img/Pepsi3L.jpg",
                         descripcion: "PizBebidazas",
                         precio: 50.99
                     },
@@ -287,25 +287,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Cervezas Corona",
-                imagen: "img/CoronaBanner.jpg",
-                logo: "img/CoronaLogo.jpg",
+                imagen: "../img/CoronaBanner.jpg",
+                logo: "../img/CoronaLogo.jpg",
                 descripcion: "Bebidas alcohólicas",
                 productos: [
                     {
                         nombreProducto: "Corona Individual",
-                        imgProducto: "img/CoronaIndividual.jpg",
+                        imgProducto: "../img/CoronaIndividual.jpg",
                         descripcion: "Bebida alcohólica",
                         precio: 70.99
                     },
                     {
                         nombreProducto: "Corona en lata",
-                        imgProducto: "img/CoronaLata.jpg",
+                        imgProducto: "../img/CoronaLata.jpg",
                         descripcion: "Bebida alcohólica",
                         precio: 25.99
                     },
                     {
                         nombreProducto: "Six pack corona",
-                        imgProducto: "img/CoronaSixPack.jpg",
+                        imgProducto: "../img/CoronaSixPack.jpg",
                         descripcion: "Bebida alcohólica",
                         precio: 250.99
                     },
@@ -316,29 +316,29 @@ var categorias = [
     {
         id: 5,
         nombreCategoria: "Postres",
-        icono: "img/PostresIcono.jpg",
+        icono: "../img/PostresIcono.jpg",
         empresas: [
             {
                 nombreEmpresa: "Cinnabon",
-                imagen: "img/CinnabonBanner.webp",
-                logo: "img/cinnabonLogo.png",
+                imagen: "../img/CinnabonBanner.webp",
+                logo: "../img/cinnabonLogo.png",
                 descripcion: "Postres",
                 productos: [
                     {
                         nombreProducto: "Cinnabon Clasico",
-                        imgProducto: "img/cinnabonClassic.jpg",
+                        imgProducto: "../img/cinnabonClassic.jpg",
                         descripcion: "Postre",
                         precio: 200.99
                     },
                     {
                         nombreProducto: "Cinnabon Cupcake",
-                        imgProducto: "img/cinnabonCupcakes.jpg",
+                        imgProducto: "../img/cinnabonCupcakes.jpg",
                         descripcion: "Postre",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "Cinnabon Mini Pecan Bon",
-                        imgProducto: "img/cinnabonMiniPecan.jpg",
+                        imgProducto: "../img/cinnabonMiniPecan.jpg",
                         descripcion: "Postre",
                         precio: 70.99
                     },
@@ -346,25 +346,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Basilios",
-                imagen: "img/basiliosBanner.jpg",
-                logo: "img/BasiliosLogo.png",
+                imagen: "../img/basiliosBanner.jpg",
+                logo: "../img/BasiliosLogo.png",
                 descripcion: "Postres-Pasteles",
                 productos: [
                     {
                         nombreProducto: "Pastel Helado",
-                        imgProducto: "img/BasiliosPastelHelado.jpg",
+                        imgProducto: "../img/BasiliosPastelHelado.jpg",
                         descripcion: "Pastel",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "Pastel de Corazón",
-                        imgProducto: "img/BasiliosPastelCorazon.jpg",
+                        imgProducto: "../img/BasiliosPastelCorazon.jpg",
                         descripcion: "Pastele",
                         precio: 350.99
                     },
                     {
                         nombreProducto: "Pastel tres leches",
-                        imgProducto: "img/Basilios3Leches.jpg",
+                        imgProducto: "../img/Basilios3Leches.jpg",
                         descripcion: "Pastele",
                         precio: 250.99
                     },
@@ -372,25 +372,25 @@ var categorias = [
             },
             {
                 nombreEmpresa: "Dunkin Donouts",
-                imagen: "img/DKBanner.jpg",
-                logo: "img/DKLogo.png",
+                imagen: "../img/DKBanner.jpg",
+                logo: "../img/DKLogo.png",
                 descripcion: "Donuts-Café",
                 productos: [
                     {
                         nombreProducto: "Media Docena",
-                        imgProducto: "img/DkmediaDocena.jpg",
+                        imgProducto: "../img/DkmediaDocena.jpg",
                         descripcion: "Donuts",
                         precio: 186.99
                     },
                     {
                         nombreProducto: "Docena de donas",
-                        imgProducto: "img/DKDocena.png",
+                        imgProducto: "../img/DKDocena.png",
                         descripcion: "Donuts",
                         precio: 279.99
                     },
                     {
                         nombreProducto: "Dona + Café",
-                        imgProducto: "img/DKDonaCafe.jpg",
+                        imgProducto: "../img/DKDonaCafe.jpg",
                         descripcion: "Donas y café",
                         precio: 59.99
                     },
