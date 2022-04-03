@@ -470,7 +470,7 @@ function empresasCategoria(codigocategoria) {
 function listaProductos(codigocategoria,empresa){
     document.getElementById('contendor-producto').innerHTML = "";
     document.getElementById('modalproductosLabel').innerHTML = `${categoriasPortal[codigocategoria].empresas[empresa].nombreEmpresa}`
-    
+
     for(let i=0; i<categoriasPortal[codigocategoria].empresas[empresa].productos.length; i++){
         document.getElementById('contendor-producto').innerHTML +=
         `<div id="producto">
@@ -483,11 +483,64 @@ function listaProductos(codigocategoria,empresa){
             </div>
             <div id="pedir-productos">
                 <p>${categoriasPortal[codigocategoria].empresas[empresa].productos[i].precio}</p>
-                <button id="btn-pedir" class="rounded-pill">Pedir</button>
+                <button id="btn-pedir" class="rounded-pill" onclick="abrirformularioPedir(${codigocategoria},${empresa},${i});">Pedir</button>
             </div>
         </div>
 
         `
     }
 
+}
+
+function abrirformularioPedir(categoria,empresa,producto) {
+    document.getElementById('contenedor-orden1').classList.toggle('abrir-categorias');
+    document.getElementById('contenedor-orden1').innerHTML = "";
+    let Pproduct = categoriasPortal[categoria].empresas[empresa].productos[producto].nombreProducto;
+    let Pdescripcion = categoriasPortal[categoria].empresas[empresa].productos[producto].descripcion;
+    let Pprecio = categoriasPortal[categoria].empresas[empresa].productos[producto].precio;
+    let Pcategoria = categoriasPortal[categoria].nombreCategoria;
+
+
+    document.getElementById('contenedor-orden1').innerHTML = 
+    `
+    <div id="contenedor-orden2">
+        <div id="titulo-orden">
+            <h4 style="margin-right: 10px">${Pproduct}</h4>
+            <p style="margin-left: 10px;">${Pprecio}</p>
+        </div>
+        <div class="flex-orden" style="justify-content: center;">
+            <h5>Ingrese la cantidad</h5>
+            <input id="input-orden" class="rounded-pill" type="text" placeholder="123">
+        </div>
+        <div class="flex-orden">
+            <button id="btn-cerrarOrden" class="rounded-pill" type="button" onclick="cerrarFormulario()">Cancelar</button>
+            <button id="btn-procesarOrden" class="rounded-pill" type="button" onclick="procesarOrden(${Pproduct},${Pdescripcion},${Pprecio})">Procesar
+                orden</button>
+        </div>
+    </div>
+    `
+}
+function cerrarFormulario() {
+    document.getElementById('contenedor-orden1').classList.remove('abrir-categorias');
+    document.getElementById('input-orden').value = "";
+}
+
+function procesarOrden(nombrePro,descriProd,Precio){
+    let cantidad = document.getElementById('input-orden').value;
+    var clienteActivo = sessionStorage.getItem('Usuario activo');
+    console.log(clienteActivo);
+
+    for(let i=0; usuarios.length; i++){
+        if(usuarios[i].nombre == clienteActivo){
+            let orden = 
+            {
+                nombreProducto: nombrePro,
+                descripcion: descriProd,
+                cantidad: cantidad,
+                precio: Precio*cantidad
+            }
+            usuarios[i].ordenes.push(orden);
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
+    }
 }
