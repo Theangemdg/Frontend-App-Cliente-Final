@@ -75,7 +75,7 @@
     <!--PRODUCTOS MAS POPULARES-->
     <div id="contenedor-populares">
         <h1>Más Populares</h1>
-        <div id="contendor-productos">
+        <div id="contendor-productosPupulares">
             <div id="contenido-producto" class="shadow-lg p-3 mb-3 bg-body">
                 <img id="icono-producto" class="rounded-circle" src="../img/BigMac.jpg" alt="">
                 <div class="">
@@ -108,14 +108,15 @@
         <div class="modal-dialog  modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header header-empresas">
-                    <button id="btn-closeEmpresa" type="button" class="border-0 fa-solid fa-arrow-left-long" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button id="btn-closeEmpresa" type="button" class="border-0 fa-solid fa-arrow-left-long" data-bs-toggle="modal" data-bs-target="#empresasModal"></button>
                     <h5 class="modal-title" id="empresasModalLabel">Modal title</h5>
                     <div></div>
+                    <!--modaldetalle-->
+                    
 
                 </div>
                 <div id="contenedor-empresas" class="modal-body p-0">
-                    
+
                 </div>
                 <div class="modal-footer" style="background-color: rgba(68, 186, 230, 1); height: 67px">
 
@@ -124,6 +125,28 @@
         </div>
     </div>
 
+
+    <!--Modal Empresas-->
+    <!-- Modal -->
+    <div class="modal fade" id="modalproductos" tabindex="-1" aria-labelledby="modalproductosLabel" aria-hidden="true">
+        <div id="modal-dialog" class="modal-dialog">
+            <div class="modal-content">
+                <div id="modalProductoHeader" class="modal-header">
+                    <button id="btn-cerrarProductos" type="button" class="border-0 fa-solid fa-arrow-left-long" data-bs-toggle="modal" data-bs-target="#empresasModal"></button>
+                    <h5 class="modal-title" id="modalproductosLabel">Pizzas</h5>
+                    <div></div>
+                </div>
+                <div class="modal-body">
+                    <div id="contendor-producto">
+                        
+                    </div>
+                </div>
+                <div id="footer-productos" class="modal-footer">
+                    <button id="btn-prod-menu" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar al Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

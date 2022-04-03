@@ -44,13 +44,13 @@ var categorias = [
                     },
                     {
                         nombreProducto: "Pizza de Jamon",
-                        imgProducto: "../img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/pizzajamon.jpg",
                         descripcion: "Pizzas",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "4 estaciones",
-                        imgProducto: "../img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/Pizza4estaciones.jpg",
                         descripcion: "Pizzas",
                         precio: 200.99
                     },
@@ -70,13 +70,13 @@ var categorias = [
                     },
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "../img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/pizzajamon.jpg",
                         descripcion: "Pizzas",
                         precio: 150.99
                     },
                     {
                         nombreProducto: "Pizza de peperoni",
-                        imgProducto: "../img/PizzaPeperoni.jpg",
+                        imgProducto: "../img/Pizza4estaciones.jpg",
                         descripcion: "Pizzas",
                         precio: 200.99
                     },
@@ -123,7 +123,7 @@ var categorias = [
                 productos: [
                     {
                         nombreProducto: "Whooper",
-                        imgProducto: "../img/WHOOPERBK.png",
+                        imgProducto: "../img/WHOPPERBK.png",
                         descripcion: "Hamburguesas",
                         precio: 250.99
                     },
@@ -332,7 +332,7 @@ var categorias = [
                     },
                     {
                         nombreProducto: "Cinnabon Cupcake",
-                        imgProducto: "../img/cinnabonCupcakes.jpg",
+                        imgProducto: "../img/cinnabonCupcakes2.jpg",
                         descripcion: "Postre",
                         precio: 150.99
                     },
@@ -450,7 +450,7 @@ function empresasCategoria(codigocategoria) {
         document.getElementById('contenedor-empresas').innerHTML += 
         `
         <div id="empresa">
-            <div style="padding: 15px;">
+            <button id="btn-productos" data-bs-toggle="modal" data-bs-target="#modalproductos" onclick="listaProductos(${codigocategoria},${i})">
                 <img id="banner-empresa" src="${categoriasPortal[codigocategoria].empresas[i].imagen}"alt="...">
                 <div id="body-empresa" class="card-body">
                     <img id="logo-empresa" src="${categoriasPortal[codigocategoria].empresas[i].logo}" class="rounded-circle " alt="...">
@@ -459,10 +459,35 @@ function empresasCategoria(codigocategoria) {
                         <p>${categoriasPortal[codigocategoria].empresas[i].descripcion}</p>
                     </div>
                 </div>
-            </div>
+            </button>
         </div>
         `
     
+    }
+
+}
+
+function listaProductos(codigocategoria,empresa){
+    document.getElementById('contendor-producto').innerHTML = "";
+    document.getElementById('modalproductosLabel').innerHTML = `${categoriasPortal[codigocategoria].empresas[empresa].nombreEmpresa}`
+    
+    for(let i=0; i<categoriasPortal[codigocategoria].empresas[empresa].productos.length; i++){
+        document.getElementById('contendor-producto').innerHTML +=
+        `<div id="producto">
+            <div>
+                <img class="img-producto rounded-circle" src="${categoriasPortal[codigocategoria].empresas[empresa].productos[i].imgProducto}" alt="img">
+            </div>
+            <div id="info-producto">
+                <h2>${categoriasPortal[codigocategoria].empresas[empresa].productos[i].nombreProducto}</h2>
+                <p>${categoriasPortal[codigocategoria].empresas[empresa].productos[i].descripcion}</p>
+            </div>
+            <div id="pedir-productos">
+                <p>${categoriasPortal[codigocategoria].empresas[empresa].productos[i].precio}</p>
+                <button id="btn-pedir" class="rounded-pill">Pedir</button>
+            </div>
+        </div>
+
+        `
     }
 
 }

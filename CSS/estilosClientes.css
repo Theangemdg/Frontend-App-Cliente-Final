@@ -247,7 +247,7 @@ body {
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    height: 115px;
+    height: 130px;
     border: none;
 }
 
@@ -361,6 +361,7 @@ body {
     margin: 15px;
     background-color: rgba(68, 186, 230, 1);
     border-radius: 30px;
+    padding: 15px;
 }
 
 #body-empresa {
@@ -396,7 +397,6 @@ body {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
     }
-    }
 }
 
 #body-empresa p {
@@ -406,4 +406,99 @@ body {
 #logo-empresa {
     width: 40px !important;
     margin-right: 15px;
+}
+
+/*ESTILOS PARA LOS PRODUCTOS*/
+#modalproductosLabel {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#modal-dialog {
+    margin-top: 75px !important;
+
+}
+
+#btn-productos {
+    padding: 0px;
+    margin: 0;
+    border-radius: 30px;
+    border: none;
+    width: 100%;
+}
+
+#btn-cerrarProductos {
+    background-color: rgba(68, 186, 230, 1);
+    color: #fff;
+    font-size: 28px;
+}
+
+#modalProductoHeader {
+    background-color: rgba(68, 186, 230, 1);
+    color: #fff;
+    font-size: 28px;
+}
+
+#contendor-producto {
+    padding: 13px;
+    background-color: rgba(68, 186, 230, 1);
+    border-radius: 30px;
+}
+
+#producto {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: stretch;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: rgba(229, 118, 27, 1);
+    box-shadow: 0px 0px 30px #7a7a7a !important;
+}
+
+.img-producto {
+    width: 80px !important;
+    margin-right: 15px;
+
+}
+
+#btn-pedir {
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+    height: 30px;
+    width: 74px;
+    font-weight: bold;
+    border-color: rgba(68, 186, 230, 0.6);
+}
+
+#pedir-productos {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch
+}
+
+#info-producto h2 {
+    font-size: 20px;
+}
+
+#info-producto p {
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+#footer-productos {
+    background-color: rgba(68, 186, 230, 1);
+    height: 80px;
+}
+
+#btn-prod-menu {
+    background-color: #E5761B;
+    color: #fff;
 }
