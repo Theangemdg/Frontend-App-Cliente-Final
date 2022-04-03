@@ -6,16 +6,22 @@ var usuarios = [
         ubicacion: "col-flor",
         ordenes: [
             {
-                nombreProducto: "Producto 1",
-                descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
-                cantidad: 3,
-                precio: 49.99
+                nombreProducto: "Pastel Helado",
+                imgProducto: "../img/BasiliosPastelHelado.jpg",
+                descripcion: "Pastel",
+                precio: 150.99
             },
             {
-                nombreProducto: "Producto 2",
-                descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
-                cantidad: 1,
-                precio: 49.99
+                nombreProducto: "Pastel de Corazón",
+                imgProducto: "../img/BasiliosPastelCorazon.jpg",
+                descripcion: "Pastele",
+                precio: 350.99
+            },
+            {
+                nombreProducto: "Pastel tres leches",
+                imgProducto: "../img/Basilios3Leches.jpg",
+                descripcion: "Pastele",
+                precio: 250.99
             }
         ],
         metodoPago: [{
@@ -32,16 +38,22 @@ var usuarios = [
         ubicacion: "col-flor",
         ordenes: [
             {
-                nombreProducto: "Producto 3",
-                descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
-                cantidad: 2,
-                precio: 49.99
+                nombreProducto: "Media Docena",
+                imgProducto: "../img/DkmediaDocena.jpg",
+                descripcion: "Donuts",
+                precio: 186.99
             },
             {
-                nombreProducto: "Producto 2",
-                descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
-                cantidad: 4,
-                precio: 49.99
+                nombreProducto: "Docena de donas",
+                imgProducto: "../img/DKDocena.png",
+                descripcion: "Donuts",
+                precio: 279.99
+            },
+            {
+                nombreProducto: "Dona + Café",
+                imgProducto: "../img/DKDonaCafe.jpg",
+                descripcion: "Donas y café",
+                precio: 59.99
             }
         ],
         metodoPago: [{
@@ -58,16 +70,22 @@ var usuarios = [
         ubicacion: "col-flor",
         ordenes: [
             {
-                nombreProducto: "Producto 4",
-                descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
-                cantidad: 5,
-                precio: 49.99
+                nombreProducto: "Media Docena",
+                imgProducto: "../img/DkmediaDocena.jpg",
+                descripcion: "Donuts",
+                precio: 186.99
             },
             {
-                nombreProducto: "Producto 1",
-                descripcion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
-                cantidad: 4,
-                precio: 49.99
+                nombreProducto: "Docena de donas",
+                imgProducto: "../img/DKDocena.png",
+                descripcion: "Donuts",
+                precio: 279.99
+            },
+            {
+                nombreProducto: "Dona + Café",
+                imgProducto: "../img/DKDonaCafe.jpg",
+                descripcion: "Donas y café",
+                precio: 59.99
             }
         ],
         metodoPago: [{
