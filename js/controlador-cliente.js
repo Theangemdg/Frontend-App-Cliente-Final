@@ -6,7 +6,7 @@ var categorias = [
         empresas: [
             {
                 nombreEmpresa: "Pizza Hut",
-                imagen: "../img/pizza-hut-banner.jpg",
+                imagen: "../img/pizza-hut-banner.jpeg",
                 logo: "../img/pizzaHutLogo.jpg",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
@@ -33,7 +33,7 @@ var categorias = [
             {
                 nombreEmpresa: "Little Caesars",
                 imagen: "../img/leattleCaesarBanner.jpg",
-                logo: "../img/littleCaessarsLogo.jpg",
+                logo: "../img/littleCaesarsLogo.png",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
                     {
@@ -59,7 +59,7 @@ var categorias = [
             {
                 nombreEmpresa: "Dominos Pizza",
                 imagen: "../img/BannerDominos.jpg",
-                logo: "../img/DominosLogo.jpg",
+                logo: "../img/DominosLogo.png",
                 descripcion: "Pizzas-Pasta-Alitas",
                 productos: [
                     {
@@ -288,7 +288,7 @@ var categorias = [
             {
                 nombreEmpresa: "Cervezas Corona",
                 imagen: "../img/CoronaBanner.jpg",
-                logo: "../img/CoronaLogo.jpg",
+                logo: "../img/CoronaLogo.png",
                 descripcion: "Bebidas alcohólicas",
                 productos: [
                     {
@@ -400,9 +400,15 @@ var categorias = [
     }
 ];
 
+function InicializarDatos() {
+    localStorage.setItem('categorias', JSON.stringify(categorias));
+}
+InicializarDatos();
 
 var usuarios = JSON.parse(localStorage.getItem('usuarios'))
+var categoriasPortal = JSON.parse(localStorage.getItem('categorias'))
 console.log(usuarios);
+console.log(categoriasPortal);
 
 function regresarAlandingPage() {
     sessionStorage.setItem('Usuario activo', "");
@@ -410,11 +416,53 @@ function regresarAlandingPage() {
 }
 
 
-function obtenerCliente(){
+function obtenerCliente() {
     var clienteActivo = sessionStorage.getItem('Usuario activo');
     console.log(clienteActivo);
 
     document.getElementById('inicarss').innerHTML = "Bienvenido/a " + clienteActivo;
-    document.getElementById('presentacion').innerHTML = "Hola, "+ clienteActivo
+    document.getElementById('presentacion').innerHTML = "Hola, " + clienteActivo
 }
 obtenerCliente();
+
+function generarCategorias() {
+    document.getElementById('contenedor-categorias').innerHTML = ""
+    for (let i = 0; i < categoriasPortal.length; i++) {
+        document.getElementById('contenedor-categorias').innerHTML +=
+            `
+            <button type="button" id="Carta-categoria" class="col-3 col-sm-5 col-md-4 col-lg-3 col-xl-2" onclick="empresasCategoria(${i})"  data-bs-toggle="modal" data-bs-target="#empresasModal">
+                <img id="icono-categoria" src="${categoriasPortal[i].icono}" class="card-img-top rounded-circle" alt="...">
+                <div class="card-body">
+                    <p class="card-text">${categoriasPortal[i].nombreCategoria}</p>
+                </div>
+            </button>
+        `
+    }
+}
+generarCategorias();
+
+function empresasCategoria(codigocategoria) {
+    console.log(codigocategoria);
+    document.getElementById('empresasModalLabel').innerHTML = `${categoriasPortal[codigocategoria].nombreCategoria}`
+
+    document.getElementById('contenedor-empresas').innerHTML="";
+    for(let i=0; i<categoriasPortal[codigocategoria].empresas.length;i++){
+        document.getElementById('contenedor-empresas').innerHTML += 
+        `
+        <div id="empresa">
+            <div style="padding: 15px;">
+                <img id="banner-empresa" src="${categoriasPortal[codigocategoria].empresas[i].imagen}"alt="...">
+                <div id="body-empresa" class="card-body">
+                    <img id="logo-empresa" src="${categoriasPortal[codigocategoria].empresas[i].logo}" class="rounded-circle " alt="...">
+                    <div>
+                        <h2>${categoriasPortal[codigocategoria].empresas[i].nombreEmpresa}</h2>
+                        <p>${categoriasPortal[codigocategoria].empresas[i].descripcion}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+    
+    }
+
+}
