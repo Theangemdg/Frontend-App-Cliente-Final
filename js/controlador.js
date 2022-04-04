@@ -3,23 +3,27 @@ var usuarios = [
         nombre: "Pedro",
         correo: "Martinez",
         contraseña: "as123",
-        ubicacion: "col-flor",
+        latitud: "151515",
+        longitud: "151554",
         ordenes: [
             {
                 nombreProducto: "Pastel Helado",
                 imgProducto: "../img/BasiliosPastelHelado.jpg",
+                cantidad: 2,
                 descripcion: "Pastel",
                 precio: 150.99
             },
             {
                 nombreProducto: "Pastel de Corazón",
                 imgProducto: "../img/BasiliosPastelCorazon.jpg",
+                cantidad: 2,
                 descripcion: "Pastele",
                 precio: 350.99
             },
             {
                 nombreProducto: "Pastel tres leches",
                 imgProducto: "../img/Basilios3Leches.jpg",
+                cantidad: 2,
                 descripcion: "Pastele",
                 precio: 250.99
             }
@@ -35,23 +39,27 @@ var usuarios = [
         nombre: "Juan",
         correo: "Perez",
         contraseña: "as123",
-        ubicacion: "col-flor",
+        latitud: "151515",
+        longitud: "151554",
         ordenes: [
             {
                 nombreProducto: "Media Docena",
                 imgProducto: "../img/DkmediaDocena.jpg",
+                cantidad: 2,
                 descripcion: "Donuts",
                 precio: 186.99
             },
             {
                 nombreProducto: "Docena de donas",
                 imgProducto: "../img/DKDocena.png",
+                cantidad: 2,
                 descripcion: "Donuts",
                 precio: 279.99
             },
             {
                 nombreProducto: "Dona + Café",
                 imgProducto: "../img/DKDonaCafe.jpg",
+                cantidad: 2,
                 descripcion: "Donas y café",
                 precio: 59.99
             }
@@ -67,23 +75,27 @@ var usuarios = [
         nombre: "Maria",
         correo: "Rodriguez",
         contraseña: "as123",
-        ubicacion: "col-flor",
+        latitud: "151515",
+        longitud: "151554",
         ordenes: [
             {
                 nombreProducto: "Media Docena",
                 imgProducto: "../img/DkmediaDocena.jpg",
+                cantidad: 2,
                 descripcion: "Donuts",
                 precio: 186.99
             },
             {
                 nombreProducto: "Docena de donas",
                 imgProducto: "../img/DKDocena.png",
+                cantidad: 2,
                 descripcion: "Donuts",
                 precio: 279.99
             },
             {
                 nombreProducto: "Dona + Café",
                 imgProducto: "../img/DKDonaCafe.jpg",
+                cantidad: 2,
                 descripcion: "Donas y café",
                 precio: 59.99
             }
@@ -140,7 +152,11 @@ inputs.forEach((input) => {
 })
 
 function InicializarDatos() {
+    if( JSON.parse(localStorage.getItem('usuarios')) !== ""){
+        console.log("no hay nada")
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    }
+    
 }
 InicializarDatos();
 
@@ -192,7 +208,7 @@ function validarUsuario(correo, contraseña) {
     for (let i = 0; i < usuariosPortal.length; i++) {
         if (usuariosPortal[i].correo==correo && usuariosPortal[i].contraseña==contraseña ) {
             bAcces = true;
-            sessionStorage.setItem('Usuario activo', usuariosPortal[i].nombre);
+            sessionStorage.setItem('Usuario activo', JSON.stringify(usuariosPortal[i]));
         }
     }
 

@@ -410,7 +410,7 @@ var categoriasPortal = JSON.parse(localStorage.getItem('categorias'))
 console.log(usuarios);
 console.log(categoriasPortal);
 
-var clienteActivo = sessionStorage.getItem('Usuario activo');
+var clienteActivo = JSON.parse(sessionStorage.getItem('Usuario activo'));
 console.log(clienteActivo);
 
 function regresarAlandingPage() {
@@ -423,8 +423,8 @@ function regresarAlandingPage() {
 function obtenerCliente() {
 
 
-    document.getElementById('inicarss').innerHTML = "Bienvenido/a " + clienteActivo;
-    document.getElementById('presentacion').innerHTML = "Hola, " + clienteActivo
+    document.getElementById('inicarss').innerHTML = "Bienvenido/a " + clienteActivo.nombre;
+    document.getElementById('presentacion').innerHTML = "Hola, " + clienteActivo.nombre
 }
 obtenerCliente();
 
@@ -501,10 +501,11 @@ function abrirformularioPedir(categoria,empresa,producto) {
     let Pproduct = categoriasPortal[categoria].empresas[empresa].productos[producto].nombreProducto;
     let Pdescripcion = categoriasPortal[categoria].empresas[empresa].productos[producto].descripcion;
     let Pprecio = categoriasPortal[categoria].empresas[empresa].productos[producto].precio;
+    let imagen = categoriasPortal[categoria].empresas[empresa].productos[producto].imgProducto;
 
     console.log(Pproduct)
     console.log(Pdescripcion)
-    console.log(Pprecio)
+    console.log(imagen)
 
     document.getElementById('contenedor-orden1').innerHTML = 
     `
@@ -519,7 +520,7 @@ function abrirformularioPedir(categoria,empresa,producto) {
         </div>
         <div class="flex-orden">
             <button id="btn-cerrarOrden" class="rounded-pill" type="button" onclick="cerrarFormulario()">Cancelar</button>
-            <button id="btn-procesarOrden" class="rounded-pill" type="button" onclick="procesarOrden('${Pproduct}','${Pdescripcion}','${Pprecio}')">Procesar orden</button>
+            <button id="btn-procesarOrden" class="rounded-pill" type="button" onclick="procesarOrden('${Pproduct}','${Pdescripcion}','${Pprecio}','${imagen}')">Procesar orden</button>
         </div>
     </div>
     `
@@ -531,7 +532,7 @@ function cerrarFormulario() {
     document.getElementById('input-orden').value = "";
 }
 
-function procesarOrden(nombrePro,descriProd,Precio) {
+function procesarOrden(nombrePro,descriProd,Precio,imagenP) {
     let cantidad = document.getElementById('input-orden').value;
 
     for(let i=0; i<usuarios.length; i++){
@@ -539,16 +540,19 @@ function procesarOrden(nombrePro,descriProd,Precio) {
             alert("Introduce la cantidad antes de prcesar la orden")
             break
         }else{
-            if(usuarios[i].nombre == clienteActivo ){
+            if(usuarios[i].nombre == clienteActivo.nombre ){
                 let orden = {
                     nombreProducto: nombrePro,
+                    imgProducto: imagenP,
                     descripcion: descriProd,
                     cantidad: cantidad,
                     precio: Precio*cantidad
                 }
                 usuarios[i].ordenes.push(orden);
+                clienteActivo.ordenes.push(orden)
                 alert("Orden realizada correctamente")
                 localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                sessionStorage.setItem('Usuario activo', JSON.stringify(usuarios[i]));
                 cerrarFormulario();
             }
         }
