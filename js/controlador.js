@@ -28,6 +28,7 @@ var usuarios = [
                 precio: 250.99
             }
         ],
+        pedidos: [],
         metodoPago: [{
             nombrePago: "Pedro Martinez",
             numeroTargeta: "123456",
@@ -64,12 +65,13 @@ var usuarios = [
                 precio: 59.99
             }
         ],
+        pedidos: [],
         metodoPago: [{
             nombrePago: "Juan Perez",
             numeroTargeta: "123456",
             FechaExpiracion: "22/02/2022",
             CVV: "756",
-        }]
+        }],
     },
     {
         nombre: "Maria",
@@ -100,12 +102,13 @@ var usuarios = [
                 precio: 59.99
             }
         ],
+        pedidos: [],
         metodoPago: [{
             nombrePago: "Maria Rodriguez",
             numeroTargeta: "123456",
             FechaExpiracion: "22/02/2022",
             CVV: "756",
-        }]
+        }],
     }
 ];
 
