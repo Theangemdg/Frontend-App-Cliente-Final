@@ -1,0 +1,380 @@
+#logo {
+    width: 175px;
+
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+}
+
+#profile-photo {
+    width: 53px;
+    height: 47px;
+}
+
+#bg-navbarcolor {
+    background-color: rgba(68, 186, 230, 1) !important;
+}
+
+#color-bar {
+    color: white !important;
+}
+
+#btn-menu {
+    display: none;
+}
+
+#barras {
+    width: 75px;
+}
+
+.container .btn-menu label {
+    color: #fff;
+    font-size: 37px;
+    cursor: pointer;
+}
+
+
+.container-menu {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: rgba(229, 118, 27, 1);
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0%);
+}
+
+.cont-menu nav {
+    transform: translateY(15%);
+}
+
+.cont-menu nav a {
+    display: block;
+    font-size: large;
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+    padding: 20px;
+    color: #ffffff;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+
+.cont-menu nav a:hover {
+    border-left: 5px solid rgba(68, 186, 230, 1);
+    background: rgb(187, 95, 12, 1);
+}
+
+.cont-menu label {
+    position: absolute;
+    right: 206px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 38px;
+}
+
+#inicarss {
+    margin-left: 53px;
+    margin-top: 30px;
+    padding-bottom: 0;
+    padding-top: 0%;
+}
+
+.position-img {
+    position: absolute;
+    left: 10px;
+    bottom: 163px;
+}
+
+.contenedor-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: space-between;
+}
+
+.contenedor-2 {
+    margin-top: 25px;
+}
+
+/*estilos de la pagina */
+#contenido-page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    padding-top: 5rem;
+}
+
+.img-page-1 {
+    width: 175px;
+}
+
+.img-page-2 {
+    width: 325px;
+}
+
+#fondo-page {
+    width: 100%;
+}
+
+#btn-registro {
+    width: 286px;
+    background-color: rgba(229, 118, 27, 1);
+    color: white;
+    height: 57px;
+    margin-bottom: 27px;
+    font-size: 26px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#btn-iniciar-sesion {
+    width: 286px;
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+    height: 57px;
+    margin-bottom: 27px;
+    font-size: 26px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#btn-iniciar-sesion:hover {
+    background-color: #31A0C9;
+}
+
+#btn-registro:hover {
+    background-color: rgba(208, 110, 20, 1);
+}
+
+header {
+    position: fixed !important;
+    width: 100%;
+
+}
+
+#pie-landing {
+    height: 57px;
+}
+
+#content-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: stretch;
+
+}
+
+.size-icon {
+    font-size: 25px;
+    padding: 7px;
+    color: white;
+}
+
+/*ESTILOS PARA EL LOGIN*/
+.modal-dialog {
+    max-width: 100%;
+    max-height: 100vh !important;
+}
+
+.modal-content {
+    height: 100vh;
+}
+
+#moodalHL {
+    background-color: rgba(229, 118, 27, 1);
+    height: 20%;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: stretch;
+}
+
+#btn-close {
+    background-color: rgba(229, 118, 27, 1);
+    color: white;
+    font-size: 220%;
+    margin-top: 8%;
+    ;
+}
+
+#LoginUserLabel {
+    margin-bottom: 0;
+    margin-left: 4%;
+    margin-top: 6%;
+    line-height: 1.5;
+    color: white;
+    font-size: 30px;
+
+
+}
+
+#moodalFl {
+    background-color: rgba(229, 118, 27, 1);
+    height: 15%;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+}
+
+
+.modal-Body-Estilo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+}
+
+.cajainfo {
+    width: 286px;
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 14%;
+
+}
+
+.cajainfo-Texto {
+    width: 100%;
+    height: 58px;
+}
+
+/*REGISTROS_USER*/
+.modal-dialog {
+    max-width: 100%;
+    max-height: 100vh !important;
+}
+
+.modal-content {
+    height: 100vh;
+}
+
+#moodalHR {
+    background-color: rgba(68, 186, 230, 1);
+    height: 20%;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: stretch;
+}
+
+#btn-close-R {
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+    font-size: 220%;
+    margin-top: 8%;
+    ;
+}
+
+#RegistroLabel {
+    margin-bottom: 0;
+    margin-left: 4%;
+    margin-top: 6%;
+    line-height: 1.5;
+    color: white;
+    font-size: 30px;
+
+
+}
+
+#moodalFR {
+    background-color: rgba(68, 186, 230, 1);
+    height: 15%;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+}
+
+.cajainfo-R {
+    width: 286px;
+    background-color: rgba(229, 118, 27, 1);
+    color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 7%;
+
+}
+
+.cajainfo-R-Texto {
+    width: 100%;
+    height: 58px;
+    transition: .3s ease all;
+    border: 3px solid #ffffff;
+}
+
+
+.cajainfo-R-Texto-correcto {
+    border: 5px solid #1ed12d;
+    opacity: 1;
+}
+
+.cajainfo-R-Texto-incorrecto {
+    border: 5px solid #bb2929;
+    opacity: 1;
+    
+}
+
+.input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 12px;
+    display: none;
+}
+
+.input-error-activo {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}

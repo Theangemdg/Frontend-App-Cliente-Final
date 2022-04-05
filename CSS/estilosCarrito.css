@@ -1,0 +1,267 @@
+.container h5 {
+    font-size: 40px;
+    color: white;
+    margin-right: 60PX;
+}
+
+.container a {
+    font-size: 45px;
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#contedor-ordenes {
+    padding: 17px;
+    color: #E5761B;
+}
+
+#contenido-producto {
+    box-shadow: 0px 0px 24px #787776 !important;
+}
+
+
+#contenido-producto h2 {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#contenido-producto p {
+    margin-bottom: 20px;
+}
+
+#contenido-producto button {
+    color: red;
+    background-color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.flex-center {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+@media (max-width:380px) {
+    .container a {
+        font-size: 28px;
+        color: white;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    .container h5 {
+        font-size: 29px;
+        color: white;
+    }
+    
+    
+}
+
+#contenedor-detalleCompra {
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+    border-radius: 30px;
+    box-shadow: 0px 0px 24px #787776 !important;
+    padding: 35px;
+}
+
+.compra {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.compra h2 {
+    font-weight: bold;
+
+}
+
+#btn-procesar {
+    width: 100%;
+    border-radius: 30px;
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 0;
+}
+
+
+/*ESTILOS PARA LA CONFIRMACION DE ELIMINAR ORDEN*/
+#headerEliminar {
+    background-color: rgba(68, 186, 230, 1);
+    color: #E5761B;
+    font-weight: bold;
+}
+
+#bodyEliminar {
+    color: #E5761B;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#btn-NO {
+    background-color: rgb(250, 51, 51);
+    width: 88px;
+}
+
+#btn-Eliminar {
+    background-color: rgba(68, 186, 230, 1);
+}
+
+
+/*GOOGLE MAPS*/
+* {
+    margin: 0;
+    padding: 0%;
+}
+
+#map {
+    height: 580px;
+    width: 100%;
+}
+
+#headerUbi{
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+}
+
+#headerUbi i {
+    margin-right: 5px;
+}
+
+
+#contendor-ubicacion {
+    color: #E5761B;
+    font-weight: bold;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 17px;
+}
+
+.latitud-longitud {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: stretch;
+}
+
+.latitud-longitud p {
+    margin-right: 30px;
+    font-size: 24px;
+}
+
+#btn-Ubicacion {
+    width: 100%;
+    border-radius: 30px;
+    background-color: rgba(68, 186, 230, 1);
+    height: 45px;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    border-color: skyblue;
+}
+
+#btn-regresarUbi {
+    font-size: 35px;
+    border: 0;
+    background-color:rgba(68, 186, 230, 1);
+    color: white;
+}
+
+#contenedor-targeta {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+    color: #E5761B;
+    font-weight: bold;
+}
+
+.estilo-targeta {
+    margin-top: 15px;
+}
+
+.estilo-targeta h2 {
+    font-weight: bold;
+}
+.estilo-targeta input {
+    width: 100%;
+    border-color: coral;
+    color: #E5761B;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.estilo-targeta2 {
+    margin-top: 15px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+}
+
+.estilo-targeta2 h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.estilo-targeta2 input {
+    width: 66px;
+    border-radius: 30px;
+    color: #E5761B;
+    margin-left: 16px;
+    text-align: center;
+    border-color: coral;
+}
+
+#btn-finalizarCompra {
+    width: 100%;
+    border-radius: 30px;
+    background-color:rgba(68, 186, 230, 1);
+    margin-top: 26px;
+    color: white;
+    height: 40px;
+}
+
+.grupo-select {
+    position: relative;
+    margin-right: 15px;
+}
+
+.grupo-select select {
+    -webkit-appearance: none !important;
+    width: 80px;
+    border-radius: 11px;
+    border-color: #E5761B;
+    text-align: center;
+    color: orange;
+}
+
+.grupo-select i {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
