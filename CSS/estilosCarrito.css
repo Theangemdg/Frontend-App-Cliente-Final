@@ -225,6 +225,7 @@
 .estilo-targeta2 h2 {
     font-size: 18px;
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .estilo-targeta2 input {
@@ -243,4 +244,24 @@
     margin-top: 26px;
     color: white;
     height: 40px;
+}
+
+.grupo-select {
+    position: relative;
+    margin-right: 15px;
+}
+
+.grupo-select select {
+    -webkit-appearance: none !important;
+    width: 80px;
+    border-radius: 11px;
+    border-color: #E5761B;
+    text-align: center;
+    color: orange;
+}
+
+.grupo-select i {
+    position: absolute;
+    right: 8px;
+    top: 5px;
 }

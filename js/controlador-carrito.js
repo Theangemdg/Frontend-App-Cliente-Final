@@ -19,8 +19,6 @@ function listaOrdenes() {
     let subtotal = 0;
     let ISV = 0.15;
 
-   
-
     for(let i=0; i< clienteActivo.ordenes.length ; i++){
 
         document.getElementById('contedor-ordenes').innerHTML +=
@@ -42,7 +40,6 @@ function listaOrdenes() {
         </div>
         `
         subtotal += clienteActivo.ordenes[i].precio
-
     }
 
     let total= ISV*subtotal + subtotal;
@@ -81,6 +78,61 @@ function eliminarOrden(nombre, product){
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
 }
+
+function crearOrden(){
+    let subtotal = 0;
+    let ISV = 0.15;
+    let total= ISV*subtotal + subtotal;
+    let numeroOrden = clienteActivo.pedidos.length +1;;
+    let orden = {
+        orden: numeroOrden,
+        productos: [],
+        estado: "Tomada",
+        subtotal: subtotal,
+        ISV: ISV*subtotal,
+        Total: total
+    }
+
+    for(let i=0; i< clienteActivo.ordenes.length ; i++){
+        
+        orden.productos.push(
+            {
+            nombreProducto: clienteActivo.ordenes[i].nombreProducto,
+            cantidad: clienteActivo.ordenes[i].cantidad,
+            precio: clienteActivo.ordenes[i].precio.toFixed(2)
+            }
+        );
+        subtotal += clienteActivo.ordenes[i].precio
+        
+    }
+    
+    
+    for(let i=0; i<usuarios.length;i++){
+        if(usuarios[i].nombre == clienteActivo.nombre){
+            clienteActivo.pedidos.push(orden)
+            usuarios[i].pedidos.push(orden)
+            break
+        }
+    }
+
+    for(let i=0; i<clienteActivo.ordenes.length ; i++){
+        if(usuarios[i].nombre == clienteActivo.nombre){
+            usuarios[i].ordenes.splice(0, usuarios[i].ordenes.length);
+            clienteActivo.ordenes.splice(0, clienteActivo.ordenes.length)
+        }
+    }
+
+    sessionStorage.setItem('Usuario activo', JSON.stringify(clienteActivo));
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    console.log(orden);
+    
+
+    window.location = "../Htmls/menu-cliente.html"
+
+}
+
+
 let map;
 let marker;
 let whacthID;
@@ -155,4 +207,51 @@ function errorHandler(err){
         alert("Error: posicion no existe o no se encuentra!")
     }
 }
+
+//*Select para llenar el mes
+for(let i=1; i<=12; i++){
+    let opcion = document.createElement('option')
+    opcion.value = i;
+    opcion.innerText = i;
+    document.getElementById('select-mes').appendChild(opcion);
+}
+
+//*select para el año
+const yearActual = new Date().getFullYear();
+for(let i=yearActual; i<yearActual + 8 ;i++){
+    let opcion = document.createElement('option');
+    opcion.value = i;
+    opcion.innerText = i;
+    document.getElementById('select-year').appendChild(opcion);
+}
+
+document.getElementById('inputNumero').addEventListener('keyup', (e) => {
+    let valorInput = e.target.value;
+    document.getElementById('inputNumero').value = valorInput
+    //*elimina espacios
+    .replace(/\s/g, '')
+    //*eliminar letras
+    .replace(/\D/g, '')
+    // Ponemos espacio cada cuatro numeros
+	.replace(/([0-9]{4})/g, '$1 ')
+	// Elimina el ultimo espaciado
+	.trim();
+
+
+})
+
+document.getElementById('inputNombre').addEventListener('keyup', (e)=> {
+    let valorInputNombre = e.target.value
+    document.getElementById('inputNombre').value = valorInputNombre
+    .replace(/[0-9]/g, '')
+})
+
+document.getElementById('inputCVV').addEventListener('keyup', (e) =>{
+    document.getElementById('inputCVV').value = document.getElementById('inputCVV').value
+    // Eliminar los espacios
+	.replace(/\s/g, '')
+	// Eliminar las letras
+	.replace(/\D/g, '');
+})
+
 

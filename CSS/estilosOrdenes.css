@@ -1,0 +1,112 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.navbarcolor {
+    background-color: rgba(68, 186, 230, 1) !important;
+    color: white;
+    height: 70px;
+}
+
+#titulo {
+    margin: 0;
+}
+
+.btn-back {
+    color: white;
+    text-decoration: none;
+    font-size: 33px;
+    background-color: rgba(68, 186, 230, 1);
+}
+
+#orden {
+    padding: 17px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 24px #787776 !important;
+    border: none;
+    color: #E5761B;
+    font-weight: bold;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+}
+
+.info-orden {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.info-orden h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#btn-orden {
+    width: 100%;
+    border-radius: 30px;
+    background-color: rgba(68, 186, 230, 1);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 0;
+}
+
+#contenedor-detalle {
+    color: #E5761B;
+    padding: 25px
+}
+
+#contenedor-detalleCompra {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    border-radius: 30px;
+    box-shadow: 0px 0px 24px #787776 !important;
+    padding: 35px;
+}
+
+.compra {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.contenedor-producto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: stretch;
+}
+
+.info-product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: stretch;
+}
+
+#icon-estados {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
