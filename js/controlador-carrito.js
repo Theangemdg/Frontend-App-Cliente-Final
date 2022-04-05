@@ -82,6 +82,7 @@ function eliminarOrden(nombre, product){
 function crearOrden(){
     let subtotal = 0;
     let ISV = 0.15;
+    let total= ISV*subtotal + subtotal;
     let numeroOrden = clienteActivo.pedidos.length +1;;
     let orden = {
         orden: numeroOrden,
@@ -104,7 +105,7 @@ function crearOrden(){
         subtotal += clienteActivo.ordenes[i].precio
         
     }
-    let total= ISV*subtotal + subtotal;
+    
     
     for(let i=0; i<usuarios.length;i++){
         if(usuarios[i].nombre == clienteActivo.nombre){
@@ -125,7 +126,9 @@ function crearOrden(){
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
     console.log(orden);
+    
 
+    window.location = "../Htmls/menu-cliente.html"
 
 }
 
