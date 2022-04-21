@@ -153,27 +153,47 @@ function cerrarFormulario() {
 
 function procesarOrden(nombrePro, descriProd, Precio, imagenP) {
     let cantidad = document.getElementById('input-orden').value;
-    for (let i = 0; i < usuarios.length; i++) {
-        if (cantidad == "") {
-            alert("Introduce la cantidad antes de prcesar la orden")
-            break
-        } else {
-            if (usuarios[i].nombre == clienteActivo.nombre) {
-                let orden = {
-                    nombreProducto: nombrePro,
-                    imgProducto: imagenP,
-                    descripcion: descriProd,
-                    cantidad: cantidad,
-                    precio: Precio * cantidad
-                }
-                usuarios[i].ordenes.push(orden);
-                clienteActivo.ordenes.push(orden)
-                alert("Orden realizada correctamente")
-                localStorage.setItem('usuarios', JSON.stringify(usuarios));
-                sessionStorage.setItem('Usuario activo', JSON.stringify(usuarios[i]));
-                cerrarFormulario();
-            }
-        }
 
-    }
+    axios({
+        url: 'http://localhost/Backend-Portal-Delivery/api/usuarios.php',
+        method: 'get',
+        responseType: 'json'
+    }).then((res) => {
+        console.log(res)
+        for (let i = 0; i < res.data.length; i++) {
+            if (cantidad == "") {
+                alert("Introduce la cantidad antes de prcesar la orden")
+                break
+            } else {
+                if (res.data[i].nombre == clienteActivo.nombre) {
+                    let orden = {
+                        nombreProducto: nombrePro,
+                        imgProducto: imagenP,
+                        cantidad: cantidad,
+                        descripcion: descriProd,
+                        precio: Precio * cantidad
+                    }
+                    
+                    axios({
+                        method: 'POST',
+                        url: "http://localhost/Backend-Portal-Delivery/api/ordenes.php?id="+i,
+                        responseType: 'json',
+                        data: orden
+                    }).then(res=>{
+                        console.log(res.data);
+                    }).catch(err=>{
+                        console.log(err);
+                    })
+                   
+                    alert("Orden realizada correctamente")
+                    sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
+                    cerrarFormulario();
+                }
+            }
+    
+        }
+        
+    }).catch(err => {
+        console.log(err);
+    })
 }
