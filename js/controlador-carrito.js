@@ -16,6 +16,7 @@ function listaOrdenes() {
     document.getElementById('contedor-ordenes').innerHTML = "";
     console.log(clienteActivo.ordenes.length )
     
+    
     let subtotal = 0;
     let ISV = 0.15;
 
