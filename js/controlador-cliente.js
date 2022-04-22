@@ -153,6 +153,7 @@ function cerrarFormulario() {
 
 function procesarOrden(nombrePro, descriProd, Precio, imagenP) {
     let cantidad = document.getElementById('input-orden').value;
+    console.log(cantidad);
 
     axios({
         url: 'http://localhost/Backend-Portal-Delivery/api/usuarios.php',
@@ -169,7 +170,7 @@ function procesarOrden(nombrePro, descriProd, Precio, imagenP) {
                     let orden = {
                         nombreProducto: nombrePro,
                         imgProducto: imagenP,
-                        cantidad: cantidad,
+                        cantidad: parseInt(cantidad),
                         descripcion: descriProd,
                         precio: Precio * cantidad
                     }
@@ -186,12 +187,12 @@ function procesarOrden(nombrePro, descriProd, Precio, imagenP) {
                     })
                    
                     alert("Orden realizada correctamente")
-                    sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
                     cerrarFormulario();
                 }
             }
-    
+            sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
         }
+        
         
     }).catch(err => {
         console.log(err);
