@@ -40,7 +40,7 @@ function listaOrdenes() {
                             </div>
                             <div>
                                 <p>$${res.data[i].precio.toFixed(2)}</p>
-                                <button class="fa-regular fa-trash-can" onclick="eliminarOrden('${res.data[i].nombreProducto}','${i}')"></button>
+                                <button class="fa-regular fa-trash-can" onclick="eliminarOrden('${i}')"></button>
                             </div>
                         </div>
                         `
@@ -79,70 +79,134 @@ function listaOrdenes() {
 
 }
 
-function eliminarOrden(nombre, product) {
-    for (let i = 0; i < clienteActivo.ordenes.length; i++) {
-        if (usuarios[i].ordenes[product].nombreProducto == nombre) {
-            clienteActivo.ordenes.splice(i, 1);
-            usuarios[i].ordenes.splice(i, 1)
-            break
-        }
-    }
-    listaOrdenes();
-    sessionStorage.setItem('Usuario activo', JSON.stringify(clienteActivo));
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+function eliminarOrden(product) {
 
+
+    axios({
+        url: 'http://localhost/Backend-Portal-Delivery/api/usuarios.php',
+        method: 'get',
+        responseType: 'json'
+    }).then((res) => {
+        for(let i=0; i<res.data.length; i++){
+            if (res.data[i].nombre == clienteActivo.nombre){
+                axios({
+                    url: 'http://localhost/Backend-Portal-Delivery/api/ordenes.php?id='+i+'&idO='+product,
+                    method: 'delete',
+                    responseType: 'json'
+                }).then((res) => {
+                    
+                }).catch(err => {
+                    console.log(err);
+                })
+                listaOrdenes();
+                sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i])); 
+                break; 
+            }
+        }
+    }).catch(err => {
+        console.log(err);
+    })
 }
 
 function crearOrden() {
-    let subtotal = 0;
-    let ISV = 0.15;
-    let total = ISV * subtotal + subtotal;
-    let numeroOrden = clienteActivo.pedidos.length + 1;;
-    let orden = {
-        orden: numeroOrden,
-        productos: [],
-        estado: "Tomada",
-        subtotal: subtotal,
-        ISV: ISV * subtotal,
-        Total: total
+    let ICV = 0.15;
+    const fechaPago = new Date();
+    let txtnombreTargeta = document.getElementById('inputNombre').value;
+    let txtnumerTargeta = document.getElementById('inputNumero').value;
+    let txtfechaExpiracion = document.getElementById('select-mes').value + "/"+ document.getElementById('select-year').value;
+    let txtcvv = document.getElementById('inputCVV').value
+
+    var campos = {
+        nombreTargeta: false,
+        numerTargeta: false,
+        fechaExpiracion: false,
+        cvv: false
     }
 
-    for (let i = 0; i < clienteActivo.ordenes.length; i++) {
+    if(txtnombreTargeta && txtnumerTargeta && txtfechaExpiracion && txtcvv !== " "){
+        campos.nombreTargeta = true;
+        campos.numerTargeta = true;
+        campos.fechaExpiracion = true;
+        campos.cvv = true;
+    }
 
-        orden.productos.push(
-            {
-                nombreProducto: clienteActivo.ordenes[i].nombreProducto,
-                cantidad: clienteActivo.ordenes[i].cantidad,
-                precio: clienteActivo.ordenes[i].precio.toFixed(2)
+    axios({
+        url: 'http://localhost/Backend-Portal-Delivery/api/usuarios.php',
+        method: 'get',
+        responseType: 'json'
+    }).then((res) => {
+        if(campos.nombreTargeta  && campos.numerTargeta && campos.fechaExpiracion && campos.cvv === true){
+            for(let i=0; i<res.data.length; i++){
+                if(res.data[i].nombre == clienteActivo.nombre){
+                    let numeroPedido = res.data[i].pedidos.length + 1;
+                    let subtotal = 0;
+                    let pedido = {
+                        numeroPedido: numeroPedido,
+                        usuario: res.data[i].nombre,
+                        correo: res.data[i].correo,
+                        fechaPago:  fechaPago.toLocaleDateString(),
+                        total: "",
+                        icv: "",
+                        subTotal: "",
+                        productos: [],
+                    }
+                    //for para llenar el pedido con los productos de la orden que se visualizo en el carrito de compras
+                    for(let j=0; j<res.data[i].ordenes.length; j++){
+                        pedido.productos.push(
+                            {
+                                nombreProducto: res.data[i].ordenes[j].nombreProducto,
+                                cantidad: res.data[i].ordenes[j].cantidad,
+                                precio: res.data[i].ordenes[j].precio
+                            }
+                        );
+                        subtotal += res.data[i].ordenes[j].precio
+                    }
+                   
+                    pedido.icv = ICV * subtotal;
+                    pedido.subTotal = subtotal;
+                    pedido.total = ICV * subtotal + subtotal;
+    
+                    console.log(subtotal);
+                    console.log(pedido);
+    
+    
+                    //solicitud para argear el pedido del usuario
+                    axios({
+                        url: 'http://localhost/Backend-Portal-Delivery/api/pedidos.php?id='+i,
+                        method: 'post',
+                        responseType: 'json',
+                        data: pedido
+                    }).then((res) => {
+                        console.log(res);
+                    }).catch(err => {
+                        console.log(err);
+                    })
+    
+                    //aqui se hace la solicirud para limpiar las ordenes del carrito cuando se complete la compra
+                    axios({
+                        url: 'http://localhost/Backend-Portal-Delivery/api/ordenes.php?id='+i,
+                        method: 'delete',
+                        responseType: 'json',
+                    }).then((res) => {
+                        console.log(res);
+                    }).catch(err => {
+                        console.log(err);
+                    })  
+                    
+                    sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
+                    break;
+                }
             }
-        );
-        subtotal += clienteActivo.ordenes[i].precio
-
-    }
-
-
-    for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].nombre == clienteActivo.nombre) {
-            clienteActivo.pedidos.push(orden)
-            usuarios[i].pedidos.push(orden)
-            break
+            window.location = "../Htmls/menu-cliente.html"
+            
+        }else{
+            alert("rellena todos los campos")
         }
-    }
-
-    for (let i = 0; i < clienteActivo.ordenes.length; i++) {
-        if (usuarios[i].nombre == clienteActivo.nombre) {
-            usuarios[i].ordenes.splice(0, usuarios[i].ordenes.length);
-            clienteActivo.ordenes.splice(0, clienteActivo.ordenes.length)
-        }
-    }
-
-    sessionStorage.setItem('Usuario activo', JSON.stringify(clienteActivo));
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    console.log(orden);
-
-
-    window.location = "../Htmls/menu-cliente.html"
+        
+    }).catch(err => {
+        console.log(err);
+    })
+    
 
 }
 
