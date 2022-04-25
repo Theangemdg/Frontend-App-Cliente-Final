@@ -116,26 +116,12 @@ function crearOrden() {
     let txtfechaExpiracion = document.getElementById('select-mes').value + "/"+ document.getElementById('select-year').value;
     let txtcvv = document.getElementById('inputCVV').value
 
-    var campos = {
-        nombreTargeta: false,
-        numerTargeta: false,
-        fechaExpiracion: false,
-        cvv: false
-    }
-
-    if(txtnombreTargeta && txtnumerTargeta && txtfechaExpiracion && txtcvv !== " "){
-        campos.nombreTargeta = true;
-        campos.numerTargeta = true;
-        campos.fechaExpiracion = true;
-        campos.cvv = true;
-    }
-
     axios({
         url: 'http://localhost/Backend-Portal-Delivery/api/usuarios.php',
         method: 'get',
         responseType: 'json'
     }).then((res) => {
-        if(campos.nombreTargeta  && campos.numerTargeta && campos.fechaExpiracion && campos.cvv === true){
+        if(txtnombreTargeta  && txtnumerTargeta && txtfechaExpiracion && txtcvv){
             for(let i=0; i<res.data.length; i++){
                 if(res.data[i].nombre == clienteActivo.nombre){
                     let numeroPedido = res.data[i].pedidos.length + 1;
@@ -200,7 +186,12 @@ function crearOrden() {
             window.location = "../Htmls/menu-cliente.html"
             
         }else{
-            alert("rellena todos los campos")
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Debes rellenar todos los campos!',
+                confirmButtonColor: '#44bae6',
+            })
         }
         
     }).catch(err => {

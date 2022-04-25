@@ -9,6 +9,16 @@ const expresiones = {
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
+function limpiarInputs(){
+        
+    document.getElementById('txt-nombre').value = "";
+    document.getElementById('txt-correo').value = "";
+    document.getElementById('txt-contraseña').value = "";      
+    document.getElementById('txt-correoI').value = "";
+    document.getElementById('txt-contraS').value = "";
+}
+limpiarInputs();
+
 const validarFormulario = (e)=>{
     switch(e.target.name) {
         case 'nombre':
@@ -81,12 +91,18 @@ function agregarUsuario() {
             data: usuario
         }).then(res=>{
             console.log(res.data);
+            iniciarUsuarioRegistrado();
         }).catch(err=>{
             console.log(err);
         })
-        ingresar();
+        
     }else{
-        alert("Es necesario rellenar todos los campos")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes rellenar todos los campos!',
+            confirmButtonColor: '#44bae6',
+        })
 
     }
 }
@@ -115,7 +131,51 @@ function ingresar() {
         if(bAcceso == true){
             window.location = "../Htmls/menu-cliente.html"
         }else{
-            alert("Credenciales erroneas");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Credenciales erroneas!',
+                confirmButtonColor: '#44bae6',
+            })
+        }
+    }).catch(err=>{
+        console.log(err);
+    })
+
+    console.log(bAcceso);
+    
+}
+
+function iniciarUsuarioRegistrado() {
+    var ucorreo = '';
+    var contraseña = '';
+    let bAcceso = false;
+
+    ucorreo = document.getElementById('txt-correo').value;
+    contraseña = document.getElementById('txt-contraseña').value;
+
+    axios({
+        url: 'http://localhost/Backend-Portal-Delivery/api/usuarios.php',
+        method: 'get',
+        responseType: 'json'
+    }).then((res) =>{
+        console.log(res.data.length);
+        for (let i = 0; i<res.data.length; i++) {
+            if (res.data[i].correo==ucorreo && res.data[i].contraseña==contraseña ) {
+                bAcceso = true;
+                sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
+                break;
+            }
+        }
+        if(bAcceso == true){
+            window.location = "../Htmls/menu-cliente.html"
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Credenciales erroneas!',
+                confirmButtonColor: '#44bae6',
+            })
         }
     }).catch(err=>{
         console.log(err);
