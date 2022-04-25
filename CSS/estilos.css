@@ -1,6 +1,6 @@
 #logo {
     width: 175px;
-
+    
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 }
 
 #bg-navbarcolor {
-    background-color: rgba(68, 186, 230, 1) !important;
+    background-color: #44bae6 !important;
 }
 
 #color-bar {
@@ -84,7 +84,7 @@ body {
 }
 
 .cont-menu nav a:hover {
-    border-left: 5px solid rgba(68, 186, 230, 1);
+    border-left: 5px solid #44bae6;
     background: rgb(187, 95, 12, 1);
 }
 
