@@ -95,7 +95,7 @@ function listaProductos(codigocategoria, empresa) {
                 <p>${res.data.productos[i].descripcion}</p>
             </div>
             <div id="pedir-productos">
-                <p>${res.data.productos[i].precio}</p>
+                <p>$${res.data.productos[i].precio}</p>
                 <button id="btn-pedir" class="rounded-pill" onclick="abrirformularioPedir(${codigocategoria},${empresa},${i});">Pedir</button>
             </div>
         </div>
@@ -163,7 +163,12 @@ function procesarOrden(nombrePro, descriProd, Precio, imagenP) {
         console.log(res)
         for (let i = 0; i < res.data.length; i++) {
             if (cantidad == "") {
-                alert("Introduce la cantidad antes de prcesar la orden")
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Introduce la cantidad antes de prcesar la orden',
+                    confirmButtonColor: '#44bae6',
+                })
                 break
             } else {
                 if (res.data[i].nombre == clienteActivo.nombre) {
@@ -185,12 +190,17 @@ function procesarOrden(nombrePro, descriProd, Precio, imagenP) {
                     }).catch(err=>{
                         console.log(err);
                     })
-                   
-                    alert("Orden realizada correctamente")
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Producto agregado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
                     cerrarFormulario();
                 }
             }
-            sessionStorage.setItem('Usuario activo', JSON.stringify(res.data[i]));
+           
         }
         
         
